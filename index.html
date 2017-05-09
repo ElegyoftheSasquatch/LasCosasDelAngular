@@ -23,8 +23,8 @@
 			<span class="caret"></span></button>
 			<ul class="dropdown-menu">
 				<li><a href="" ng-click=tab='id'>ID</a></li>
-				<li><a href="" ng-click=tab='titulo'>Title</a></li>
-				<li><a href="" ng-click=tab='editorial'>Editorial</a></li>
+				<li><a href="" ng-click=tab='title'>Title</a></li>
+				<li><a href="" ng-click=tab='author'>Author</a></li>
 			</ul>
 		</div>
 			<p class="pull-right col-offset-md-1" style="color: gray;">Search our books: <input type="text" ng-model="test"></p>
@@ -39,8 +39,9 @@
 				<div class="col-md-10">
 					<h3><a href="public/{{product.link}}">{{product.title}}</a></h3>
 					<p><b>{{product.author}}</b><br>
-					{{product.description}}</p>
-					<a href="{{product.link}}" class="btn btn-info btn-lg pull-right" role="button" style="padding-right: 50px; padding-left: 50px;">Buy!</a>
+					{{product.id + ".- " + product.description}}</p>
+					<a href="{{product.link}}" class="btn btn-info btn-lg pull-right" role="button" style="padding-right: 50px; padding-left: 50px;" ng-show="product.canPurchase">Buy!</a>
+					<!--<button class="pull-right" ng-show="product.canPurchase" href="{{product.link}}">Add to Cart</button>-->
 				</div>
 			</div>
 		</div>
